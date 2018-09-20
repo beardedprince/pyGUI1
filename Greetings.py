@@ -9,9 +9,9 @@ root.minsize(150,250)
 # defining a function to generate random phrase
 
 def generator():
-    phrases = ["Hello, welcome ", "Wow, welcome mate ", "How are you doing today "]
+    phrases = ["Hello, welcome ", "Wow, welcome mate ", "How are you doing today ", "Kaabo "]
     name = str(input1.get())
-    return phrases[random.randint(0,3)] + name
+    return phrases[random.randint(0,6)] + name
 
 def display():
     display_msg = generator()
@@ -25,7 +25,7 @@ label1.grid(row=0, column=0)
 
 label2 = Label(root, text="What is your name???", fg="RED")
 label2.grid(row=1, column=0)
-input1 = Entry(root)
+input1 = Entry(root, show="*")
 input1.grid(row=1, column=1)
 
 button1 = Button(root, text="Click Here", background="blue", command=display)
@@ -33,5 +33,5 @@ button1.grid(row=3, columnspan=2)
 
 time_string = time.strftime('%H:%M:%S')
 status = Label(root, text=time_string, relief=SUNKEN)
-status.grid(row=12, sticky=N)
+status.grid(row=12, column=0, sticky=S)
 root.mainloop()
