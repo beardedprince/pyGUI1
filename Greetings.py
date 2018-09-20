@@ -17,7 +17,7 @@ def display():
     display_msg = generator()
     display1 = Text(master=root, height=10, width=30)
     display1.grid(column=0, row=3)
-    display1.insert(display_msg())
+    display1.insert(END, display_msg)
 
 
 label1 = Label(root, text="Welcome to my fist interactive app", fg="RED")
