@@ -1,9 +1,10 @@
 import random
 from tkinter import *
+import time
 
 root = Tk()
 root.title("Greetings__")
-root.minsize(400,500)
+root.minsize(150,250)
 
 # defining a function to generate random phrase
 
@@ -16,18 +17,21 @@ def display():
     display_msg = generator()
     display1 = Text(master=root, height=10, width=30)
     display1.grid(column=0, row=3)
-    display1.insert(root.END, display_msg)
+    display1.insert(display_msg())
 
 
 label1 = Label(root, text="Welcome to my fist interactive app", fg="RED")
-label1.grid(column=1, row=0)
+label1.grid(row=0, column=0)
 
 label2 = Label(root, text="What is your name???", fg="RED")
-label2.grid(column=0, row=1)
+label2.grid(row=1, column=0)
 input1 = Entry(root)
-input1.grid(column=1, row=1)
+input1.grid(row=1, column=1)
 
-button1 = Button(root, text="Click Here", background="blue", command=generator)
-button1.grid(column=0, row=2)
+button1 = Button(root, text="Click Here", background="blue", command=display)
+button1.grid(row=3, columnspan=2)
 
-root .mainloop()
+time_string = time.strftime('%H:%M:%S')
+status = Label(root, text=time_string, relief=SUNKEN)
+status.grid(row=12, sticky=N)
+root.mainloop()
