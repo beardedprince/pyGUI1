@@ -9,7 +9,7 @@ root.minsize(150,250)
 # defining a function to generate random phrase
 
 def generator():
-    phrases = ["Hello, welcome ", "Wow, welcome mate ", "How are you doing today? "]
+    phrases = ["Hello, welcome ", "Wow, welcome mate ", "How are you doing today "]
     name = str(input1.get())
     return phrases[random.randint(0,3)] + name
 
